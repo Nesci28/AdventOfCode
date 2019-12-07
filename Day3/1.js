@@ -1,5 +1,4 @@
 const paths = require('./asset.json');
-const _ = require('lodash');
 
 const first = paths.first;
 const second = paths.second;
@@ -7,49 +6,52 @@ const second = paths.second;
 let firstVector = [{ x: 0, y: 0 }];
 let secondVector = [{ x: 0, y: 0 }];
 
-first.forEach(path => {
-  const direction = path[0];
-  const steps = path.slice(1);
-  generatingPaths(firstVector, direction, steps);
-});
+function main() {
+  first.forEach(path => {
+    generatingPaths(firstVector, path[0], path.slice(1));
+  });
+  const firstSet = generatingSet(firstVector);
 
-second.forEach(path => {
-  const direction = path[0];
-  const steps = path.slice(1);
-  generatingPaths(secondVector, direction, steps);
-});
+  second.forEach(path => {
+    generatingPaths(secondVector, path[0], path.slice(1));
+  });
+  const secondSet = generatingSet(secondVector);
 
-let distance = Infinity;
-firstVector = firstVector.slice(1);
-secondVector = secondVector.slice(1);
+  let distance = Infinity;
+  let initialLength = firstSet.size;
+  [...secondSet].splice(1).forEach(vec => {
+    firstSet.add(vec);
+    if (firstSet.size === initialLength) {
+      vec = vec.split(':');
+      const total = Math.abs(+vec[0]) + Math.abs(+vec[1]);
+      if (total < distance) distance = total;
+    } else {
+      initialLength += 1;
+    }
+  });
+  console.log('distance :', distance);
+}
 
-const arr = _.intersectionWith(firstVector, secondVector, _.isEqual);
-arr.forEach(vector => {
-  const total = Math.abs(vector.x) + Math.abs(vector.y);
-  if (total < distance) distance = total;
-});
+main();
 
-console.log('distance :', distance);
+function generatingSet(vector) {
+  return vector.reduce((accu, vec) => {
+    return accu.add(`${vec.x}:${vec.y}`);
+  }, new Set());
+}
 
 function generatingPaths(vector, direction, steps) {
-  if (direction === 'R') goingHorizontal(vector, steps, 'right');
-  if (direction === 'L') goingHorizontal(vector, steps, 'left');
-  if (direction === 'U') goingVertical(vector, steps, 'up');
-  if (direction === 'D') goingVertical(vector, steps, 'down');
+  if (direction === 'R') path(vector, steps, 'right', '');
+  if (direction === 'L') path(vector, steps, 'left', '');
+  if (direction === 'U') path(vector, steps, '', 'up');
+  if (direction === 'D') path(vector, steps, '', 'down');
 }
 
-function goingHorizontal(vector, steps, dir) {
-  dir = dir === 'right' ? 1 : -1;
-  const start = vector[vector.length - 1];
+function path(vector, steps, hor, ver) {
+  const start = [...vector][vector.length - 1];
   for (let i = 1; i <= steps; i++) {
-    vector.push({ x: start['x'] + i * dir, y: start['y'] });
-  }
-}
-
-function goingVertical(vector, steps, dir) {
-  dir = dir === 'up' ? 1 : -1;
-  const start = vector[vector.length - 1];
-  for (let i = 1; i <= steps; i++) {
-    vector.push({ x: start['x'], y: start['y'] + i * dir });
+    x = hor === 'left' ? i * -1 : hor === 'right' ? i * 1 : i * 0;
+    y = ver === 'down' ? i * -1 : ver === 'up' ? i * 1 : i * 0;
+    vector.push({ x: start.x + x, y: start.y + y });
   }
 }
