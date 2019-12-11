@@ -1,4 +1,4 @@
-const program = require('./asset.json');
+const program = require('./test.json');
 
 let opcode;
 let index;
