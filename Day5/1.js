@@ -19,7 +19,7 @@ function operations(
   parameterMode2,
   parameterMode3,
 ) {
-  if (parameterMode1 === undefined) {
+  if (parameterMode1 === undefined || opcode === 4 || opcode === 3) {
     if (opcode === 1) {
       program[program[index + 3]] =
         program[program[index + 1]] + program[program[index + 2]];
@@ -35,7 +35,7 @@ function operations(
       return 2;
     }
     if (opcode === 4) {
-      console.log(program[program[index + 1]]);
+      console.log('outputs: ' + program[program[index + 1]]);
       return 2;
     }
   } else {
