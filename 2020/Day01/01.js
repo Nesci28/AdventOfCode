@@ -1,4 +1,4 @@
-const inputs = require("./input");
+const inputs = require("./inputs");
 
 for (let i = 0; i < inputs.length; i++) {
   const firstEl = inputs[i];
