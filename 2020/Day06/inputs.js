@@ -1,4 +1,5 @@
-module.exports = `hxcq
+module.exports = `
+hxcq
 xq
 
 iwokvx
@@ -2238,4 +2239,5 @@ a
 f
 a
 l
-hyue`;
+hyue
+`;
