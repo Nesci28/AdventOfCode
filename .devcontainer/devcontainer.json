@@ -1,0 +1,29 @@
+{
+    "name": "advent-of-code",
+    "workspaceFolder": "/home/node/app",
+    "dockerComposeFile": ["../docker/docker-compose.yaml"],
+    "service": "advent-of-code",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "remoteUser": "node",
+    "extensions": [
+      "angular.ng-template",
+      "coenraads.bracket-pair-colorizer",
+      "mikestead.dotenv",
+      "pkief.material-icon-theme",
+      "eamodio.gitlens",
+      "rbbit.typescript-hero",
+      "dbaeumer.vscode-eslint",
+      "rvest.vs-code-prettier-eslint",
+      "johnpapa.angular2",
+      "mathcale.theme-dracula-refined",
+      "xabikos.javascriptsnippets",
+      "christian-kohler.path-intellisense",
+      "wayou.vscode-todo-highlight",
+      "bradlc.vscode-tailwindcss",
+      "atlassian.atlascode",
+      "oderwat.indent-rainbow",
+      "infinity1207.angular2-switcher"
+    ]
+  }
