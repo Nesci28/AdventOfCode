@@ -1,7 +1,7 @@
-package.json
 pnpm-lock.yaml
 node_modules/
 .DS_Store
 docker/.env
 docker/.npmrc
 **/*.log
+package-lock.json
