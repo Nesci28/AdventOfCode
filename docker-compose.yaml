@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  advent-of-code:
+    image: docker.okidoo.co/node-dev:latest
+    container_name: advent-of-code
+    dns: 1.1.1.1
+    volumes:
+      - type: bind
+        source: '../'
+        target: '/home/node/app'
+    command: tail -F anything
+    networks:
+      - advent-of-code
+
+networks:
+  advent-of-code:

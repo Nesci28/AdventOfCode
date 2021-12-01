@@ -1,0 +1,4 @@
+registry=https://nexus.nos.sh/repository/npm-all/
+always-auth=true
+timeout=120000
+_auth=
