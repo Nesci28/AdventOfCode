@@ -4,7 +4,13 @@
     "dockerComposeFile": ["../docker/docker-compose.yaml"],
     "service": "advent-of-code",
     "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
+      "telemetry.telemetryLevel": "off",
+      "terminal.integrated.profiles.windows": {
+        "bash": {
+          "path": "/bin/bash",
+        }
+      },
+      "terminal.integrated.defaultProfile.windows": "bash"
     },
     "remoteUser": "node",
     "extensions": [
@@ -15,7 +21,6 @@
       "eamodio.gitlens",
       "rbbit.typescript-hero",
       "dbaeumer.vscode-eslint",
-      "rvest.vs-code-prettier-eslint",
       "johnpapa.angular2",
       "mathcale.theme-dracula-refined",
       "xabikos.javascriptsnippets",
@@ -24,6 +29,8 @@
       "bradlc.vscode-tailwindcss",
       "atlassian.atlascode",
       "oderwat.indent-rainbow",
-      "infinity1207.angular2-switcher"
-    ]
+      "infinity1207.angular2-switcher",
+      "shardulm94.trailing-spaces"
+    ],
+    "postCreateCommand": "npm install"
   }

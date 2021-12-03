@@ -1,52 +1,66 @@
 {
-    "files.exclude": {
-      "**/node_modules": false
-    },
-    "peacock.remoteColor": "#146B3A",
-    "javascript.preferences.quoteStyle": "double",
-    "typescript.preferences.quoteStyle": "double",
-    "typescriptHero.imports.stringQuoteStyle": "\"",
-    "editor.formatOnSave": true,
-    "eslint.alwaysShowStatus": true,
-    "[jsonc]": {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
-    "[html]": {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
-    "[scss]": {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
-    "[javascript]": {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    },
-    "typescriptHero.imports.organizeOnSave": true,
-    "workbench.colorTheme": "Dracula Refined",
-    "workbench.iconTheme": "material-icon-theme",
-    "peacock.color": "#dd0531",
-    "indentRainbow.includedLanguages": ["yml", "yaml", "YML", "YAML"],
-    "workbench.colorCustomizations": {
-      "activityBar.activeBackground": "#1c9651",
-      "activityBar.activeBorder": "#6623bc",
-      "activityBar.background": "#1c9651",
-      "activityBar.foreground": "#e7e7e7",
-      "activityBar.inactiveForeground": "#e7e7e799",
-      "activityBarBadge.background": "#6623bc",
-      "activityBarBadge.foreground": "#e7e7e7",
-      "statusBar.background": "#146b3a",
-      "statusBar.foreground": "#e7e7e7",
-      "statusBarItem.hoverBackground": "#1c9651",
-      "titleBar.activeBackground": "#146b3a",
-      "titleBar.activeForeground": "#e7e7e7",
-      "titleBar.inactiveBackground": "#146b3a99",
-      "titleBar.inactiveForeground": "#e7e7e799",
-      "sash.hoverBorder": "#1c9651",
-      "statusBarItem.remoteBackground": "#146b3a",
-      "statusBarItem.remoteForeground": "#e7e7e7"
-    },
-    "typescript.preferences.importModuleSpecifier": "relative",
-    "editor.tabSize": 2
+  "files.exclude": {
+    "**/minio-data/**": true,
+    "**/node_modules/**": true
+  },
+  "files.watcherExclude": {
+    "**/minio-data/**": true
+  },
+  "javascript.preferences.quoteStyle": "double",
+  "typescript.preferences.quoteStyle": "double",
+  "typescriptHero.imports.stringQuoteStyle": "\"",
+  "eslint.alwaysShowStatus": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "typescriptHero.imports.organizeOnSave": true,
+  "editor.detectIndentation": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dracula Refined",
+  "editor.tabSize": 2,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "telemetry.enableCrashReporter": false,
+  "todohighlight.keywords": ["LOGIC_CHECK:"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#2f7c47",
+    "activityBar.activeBorder": "#422c74",
+    "activityBar.background": "#2f7c47",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#422c74",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#215732",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#2f7c47",
+    "titleBar.activeBackground": "#215732",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#21573299",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "sash.hoverBorder": "#2f7c47",
+    "statusBarItem.remoteBackground": "#215732",
+    "statusBarItem.remoteForeground": "#e7e7e7"
+  },
+  "peacock.remoteColor": "#215732",
+  "peacock.color": "#215732",
+  "search.exclude": {
+    "**/dist": true,
+    "package-lock.json": true
   }
+}
