@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Nesci28/AdventOfCode#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "flat": "^5.0.2",
+    "lodash": "^4.17.21",
+    "mathjs": "^10.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.5.0",
