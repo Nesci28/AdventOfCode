@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Nesci28/AdventOfCode#readme",
   "dependencies": {
     "flat": "^5.0.2",
+    "generatorics": "^1.1.0",
     "lodash": "^4.17.21",
     "mathjs": "^10.0.0"
   },
