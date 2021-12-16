@@ -62,5 +62,8 @@
   "search.exclude": {
     "**/dist": true,
     "package-lock.json": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   }
 }
