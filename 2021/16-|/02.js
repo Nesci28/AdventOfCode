@@ -75,10 +75,11 @@ function calculate(tree, parent) {
   }
 
   const { childs, value } = tree;
-  if (!childs.length) {
+  const childsFiltered = childs.filter(Boolean);
+  if (!childsFiltered.length) {
     parent.childValues.push(value);
   } else {
-    for (const child of childs) {
+    for (const child of childsFiltered) {
       calculate(child, tree);
     }
     calculateOperations(tree);
@@ -110,9 +111,11 @@ function calculateI0Childs(input) {
   let childInput = newInput.substring(15, 15 + L);
   const childs = [];
   let consumed = 0;
-  while (consumed !== L) {
-    const child = parsePackets(childInput);
-    const childFlatten = Object.entries(flatten(child)).filter((x) => x[0].includes("length"));
+  while (consumed !== L && childInput) {
+    const child = parsePackets(childInput) || [];
+    const flatChild = flatten(child);
+    const entriesChild = Object.entries(flatChild);
+    const childFlatten = entriesChild.filter((x) => x[0].includes("length"));
     const totalConsumed = _.sum(childFlatten.map((x) => x[1]));
     consumed += totalConsumed;
     childs.push(child);
@@ -167,36 +170,44 @@ function parsePackets(input) {
 
 function solve(input) {
   const packets = parsePackets(input);
-  calculate(packets);
-  const { value } = packets;
-  return value;
+  const test = Object.entries(flatten(packets)).filter((x) => x[1]);
+  const test1 = test.reduce((a, c) => {
+    const [key, value] = c;
+    a[key] = value;
+    return a;
+  }, {});
+  fs.writeFileSync("./test.txt", JSON.stringify(test1, null, 2));
+  console.log("test1 :>> ", test1);
+  // calculate(packets);
+  // const { value } = packets;
+  // return value;
 }
 
 let total = 0;
 
-total = solve(hex2bin("C200B40A82"));
-console.log(total === 3);
+// total = solve(hex2bin("C200B40A82"));
+// console.log(total === 3);
 
-total = solve(hex2bin("04005AC33890"));
-console.log(total === 54);
+// total = solve(hex2bin("04005AC33890"));
+// console.log(total === 54);
 
-total = solve(hex2bin("880086C3E88112"));
-console.log(total === 7);
+// total = solve(hex2bin("880086C3E88112"));
+// console.log(total === 7);
 
-total = solve(hex2bin("CE00C43D881120"));
-console.log(total === 9);
+// total = solve(hex2bin("CE00C43D881120"));
+// console.log(total === 9);
 
-total = solve(hex2bin("F600BC2D8F"));
-console.log(total === 0);
+// total = solve(hex2bin("F600BC2D8F"));
+// console.log(total === 0);
 
-total = solve(hex2bin("D8005AC2A8F0"));
-console.log(total === 1);
+// total = solve(hex2bin("D8005AC2A8F0"));
+// console.log(total === 1);
 
-total = solve(hex2bin("9C005AC2F8F0"));
-console.log(total === 0);
+// total = solve(hex2bin("9C005AC2F8F0"));
+// console.log(total === 0);
 
-total = solve(hex2bin("9C0141080250320F1802104A08"));
-console.log(total === 1);
+// total = solve(hex2bin("9C0141080250320F1802104A08"));
+// console.log(total === 1);
 
 total = solve(hex2bin(inputs));
 console.log("total :>> ", total);
