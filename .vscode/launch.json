@@ -5,13 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Attach",
-      "port": 9229,
+      "name": "Attach Typescript",
+      "type": "node",
       "request": "attach",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "type": "pwa-node"
-    },
+      "port": 9229,
+      "address": "localhost",
+      "protocol": "inspector",
+      "restart": true,
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "/home/node/app/*": "${workspaceRoot}/*"
+      },
+      "trace": true
+    }
   ]
 }

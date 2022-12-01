@@ -4,13 +4,10 @@ services:
     image: docker.okidoo.co/node-dev:latest
     container_name: advent-of-code
     dns: 1.1.1.1
+    env_file:
+      - ./.git.env
     volumes:
-      - type: bind
-        source: '../'
-        target: '/home/node/app'
+      - ./.npmrc:/home/node/.npmrc
+      - ../:/home/node/app
+      - ~/.ssh/:/home/node/.ssh/
     command: tail -F anything
-    networks:
-      - advent-of-code
-
-networks:
-  advent-of-code:
