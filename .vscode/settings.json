@@ -35,13 +35,13 @@
   "[javascript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     }
   },
   "[typescript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     }
   },
   "[html]": {

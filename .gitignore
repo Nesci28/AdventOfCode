@@ -6,3 +6,8 @@ docker/.npmrc
 **/*.log
 package-lock.json
 dist/
+
+**/inputs.ts
+**/inputs.txt
+**/input.ts
+**/input.txt
