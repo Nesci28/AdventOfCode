@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   advent-of-code:
-    image: docker.okidoo.co/node-dev-20:latest
+    image: docker.okidoo.co/node-dev-22:latest
     container_name: advent-of-code
     dns: 1.1.1.1
     env_file:
