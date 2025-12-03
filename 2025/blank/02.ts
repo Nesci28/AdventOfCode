@@ -3,7 +3,10 @@ import { readFile } from "fs/promises";
 type Input = string;
 
 async function parse(): Promise<Input> {
-  const rawInput = (await readFile("./input.txt")).toString();
+  const arg = process.argv[2];
+  const rawInput = (await readFile(arg ? "sample.txt" : "input.txt"))
+    .toString()
+    .trim();
 
   return rawInput;
 }
