@@ -23,7 +23,7 @@
     "@okidoo/eslint-config": "^1.0.24",
     "@okidoo/git-config": "^1.0.0",
     "@types/lodash": "^4.17.13",
-    "@types/node": "^18.11.10",
+    "@types/node": "^22.19.1",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
