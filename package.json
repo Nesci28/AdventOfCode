@@ -13,6 +13,8 @@
   },
   "homepage": "https://github.com/Nesci28/AdventOfCode#readme",
   "dependencies": {
+    "@yest/contract": "^10.1.18",
+    "@yest/utils": "^18.4.10",
     "flat": "^5.0.2",
     "generatorics": "^1.1.0",
     "lodash": "^4.17.21",
