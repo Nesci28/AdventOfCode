@@ -16,4 +16,5 @@ async function parse(): Promise<Input> {
   const total = 0;
 
   console.log("total :>> ", total);
+  process.exit(0);
 })();
